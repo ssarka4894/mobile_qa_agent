@@ -116,11 +116,11 @@ python main.py --device emulator-5554
 
 ## Key Features
 
-✅ **Lenient State Verification**: Actions don't fail on state mismatches
-✅ **API Quota Handling**: Uses gemini-2.5-flash for higher limits
-✅ **Automatic Retries**: Configurable retry logic for flaky steps
-✅ **Screenshot Capture**: Full visual documentation of test execution
-✅ **Detailed Reports**: Comprehensive test execution reports
+- **Lenient State Verification**: Actions don't fail on state mismatches
+- **API Quota Handling**: Uses gemini-2.5-flash for higher limits
+- **Automatic Retries**: Configurable retry logic for flaky steps
+- **Screenshot Capture**: Full visual documentation of test execution
+- **Detailed Reports**: Comprehensive test execution reports
 
 ## Coordinates Used
 

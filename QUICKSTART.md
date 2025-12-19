@@ -164,12 +164,3 @@ mobile-qa-agent/
 └── tests/                  ← Test definitions
 ```
 
-## Still Having Issues?
-
-Check:
-1. ✅ .env file exists in mobile-qa-agent/ directory
-2. ✅ .env contains: GEMINI_API_KEY=your_actual_key
-3. ✅ No spaces around the = sign
-4. ✅ Key is valid (test at https://aistudio.google.com)
-5. ✅ Running from mobile-qa-agent/ directory
-6. ✅ ADB device connected: `adb devices`

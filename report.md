@@ -414,5 +414,6 @@ Special appreciation to the open-source community maintaining the tools and fram
 
 **GitHub:** https://github.com/ssarka4894/mobile_qa_agent/tree/main  
 **Demo Video:** https://github.com/ssarka4894/mobile_qa_agent/blob/main/Qualgent_QA_Agent_Automation_Demo-2025-12-18_20.20.12
+**Paper Draft:** https://github.com/ssarka4894/mobile_qa_agent/blob/main/MobileQAAgent_Paper_Draft.pdf
 
 The repository contains complete source code, test definitions, configuration files, setup instructions, and execution logs to enable full reproducibility of this research.

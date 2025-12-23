@@ -41,7 +41,7 @@ class TestRunner:
         self,
         test_definition: Dict,
         reset_app_before: bool = True,
-        use_hardcoded_steps: bool = True
+        use_hardcoded_steps: bool = False
     ) -> Dict[str, Any]:
         """
         Run a single test

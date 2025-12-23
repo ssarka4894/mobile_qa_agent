@@ -1,0 +1,269 @@
+{
+  "test_name": "Test 4: Print to PDF",
+  "test_definition": {
+    "name": "Test 4: Print to PDF",
+    "description": "Find and click the 'Print to PDF' button in the vault options menu",
+    "expected_result": "FAIL",
+    "reason": "This feature does not exist in the mobile version",
+    "steps": [
+      {
+        "step_number": 1,
+        "description": "Tap Vault Options",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "tap",
+        "coordinates": [
+          1400,
+          3000
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 2,
+        "description": "Look for 'Print to PDF' (not found, menu closes)",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "tap",
+        "coordinates": [
+          750,
+          1400
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 3,
+        "description": "Verify Print to PDF button exists",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "verify",
+        "verification_criteria": [
+          "'Print to PDF' button exists in menu (Expected to FAIL - button doesn't exist)"
+        ]
+      }
+    ],
+    "success_criteria": [
+      "Test should FAIL because 'Print to PDF' doesn't exist in mobile version"
+    ]
+  },
+  "step_results": [
+    {
+      "step_number": 1,
+      "description": "Tap Vault Options",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "tap",
+      "coordinates": [
+        1400,
+        3000
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "empty_vault",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap Vault Options",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0054_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0055_after.png",
+        "error": null,
+        "execution_time": 1.8396663665771484,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap Vault Options",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 1,
+            "description": "Tap Vault Options",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "tap",
+            "coordinates": [
+              1400,
+              3000
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            1400,
+            3000
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap Vault Options",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 1,
+          "description": "Tap Vault Options",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "tap",
+          "coordinates": [
+            1400,
+            3000
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          1400,
+          3000
+        ]
+      }
+    },
+    {
+      "step_number": 2,
+      "description": "Look for 'Print to PDF' (not found, menu closes)",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "tap",
+      "coordinates": [
+        750,
+        1400
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "empty_vault",
+      "state_match": true,
+      "message": "\u2713 Step completed: Look for 'Print to PDF' (not found, menu closes)",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0056_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0057_after.png",
+        "error": null,
+        "execution_time": 1.818390130996704,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Look for 'Print to PDF' (not found, menu closes)",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 2,
+            "description": "Look for 'Print to PDF' (not found, menu closes)",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "tap",
+            "coordinates": [
+              750,
+              1400
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            750,
+            1400
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Look for 'Print to PDF' (not found, menu closes)",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 2,
+          "description": "Look for 'Print to PDF' (not found, menu closes)",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "tap",
+          "coordinates": [
+            750,
+            1400
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          750,
+          1400
+        ]
+      }
+    },
+    {
+      "step_number": 3,
+      "description": "Verify Print to PDF button exists",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "verify",
+      "verification_criteria": [
+        "'Print to PDF' button exists in menu (Expected to FAIL - button doesn't exist)"
+      ],
+      "success": false,
+      "actual_state": "unknown",
+      "state_match": false,
+      "message": "\u2717 Verification failed as expected: 'Print to PDF' button exists in menu (Expected to FAIL - button doesn't exist)",
+      "issues": [
+        "Verification failed (expected behavior)"
+      ],
+      "execution_result": {
+        "success": true,
+        "action": "verify",
+        "screenshot_before": "artifacts/screenshots/screenshot_0058_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0059_after.png",
+        "error": null,
+        "execution_time": 1.316359281539917,
+        "plan": {
+          "action": "verify",
+          "reasoning": "Executing predefined step: Verify Print to PDF button exists",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 3,
+            "description": "Verify Print to PDF button exists",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "verify",
+            "verification_criteria": [
+              "'Print to PDF' button exists in menu (Expected to FAIL - button doesn't exist)"
+            ]
+          },
+          "verification_criteria": [
+            "'Print to PDF' button exists in menu (Expected to FAIL - button doesn't exist)"
+          ]
+        }
+      },
+      "plan": {
+        "action": "verify",
+        "reasoning": "Executing predefined step: Verify Print to PDF button exists",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 3,
+          "description": "Verify Print to PDF button exists",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "verify",
+          "verification_criteria": [
+            "'Print to PDF' button exists in menu (Expected to FAIL - button doesn't exist)"
+          ]
+        },
+        "verification_criteria": [
+          "'Print to PDF' button exists in menu (Expected to FAIL - button doesn't exist)"
+        ]
+      }
+    }
+  ],
+  "final_result": {
+    "passed": false,
+    "message": "Test FAILED as expected (correct behavior): This feature does not exist in the mobile version",
+    "step_summary": {
+      "total": 3,
+      "successful": 2,
+      "failed": 1
+    },
+    "issues": [
+      "Step 3: \u2717 Verification failed as expected: 'Print to PDF' button exists in menu (Expected to FAIL - button doesn't exist)"
+    ],
+    "expected_result": "FAIL"
+  },
+  "report": "\n======================================================================\nTEST REPORT: Test 4: Print to PDF\n======================================================================\n\nDescription: Find and click the 'Print to PDF' button in the vault options menu\nExpected Result: FAIL\n\nSTEP EXECUTION:\n  \u2713 Step 1: Tap Vault Options\n  \u2713 Step 2: Look for 'Print to PDF' (not found, menu closes)\n  \u2717 Step 3: Verify Print to PDF button exists\n      Issue: Verification failed (expected behavior)\n\nFINAL RESULT: \u2717 FAILED\nMessage: Test FAILED as expected (correct behavior): This feature does not exist in the mobile version\n\nISSUES:\n  - Step 3: \u2717 Verification failed as expected: 'Print to PDF' button exists in menu (Expected to FAIL - button doesn't exist)\n\nSUCCESS CRITERIA:\n  - Test should FAIL because 'Print to PDF' doesn't exist in mobile version\n======================================================================\n",
+  "execution_time": 51.27485799789429,
+  "timestamp": "2025-12-21 22:13:08"
+}

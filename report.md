@@ -495,7 +495,7 @@ Our experiments provide empirical evidence supporting production deployment:
 ### Recommended Configuration
 
 ```python
-MODEL = "gemini-1.5-flash"  # Matches Pro at 90% savings
+MODEL = "gemini-2.5-flash"  # Matches Pro at 90% savings
 TEMPERATURE = 0.3           # Any value works
 CONTEXT_WINDOW = 5          # Or 3, no difference  
 FEW_SHOT_EXAMPLES = 0       # Zero-shot sufficient

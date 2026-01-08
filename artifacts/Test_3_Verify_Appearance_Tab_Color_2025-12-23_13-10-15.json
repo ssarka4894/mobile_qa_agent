@@ -1,0 +1,519 @@
+{
+  "test_name": "Test 3: Verify Appearance Tab Color",
+  "test_definition": {
+    "name": "Test 3: Verify Appearance Tab Color",
+    "description": "Go to Settings and verify that the 'Appearance' tab icon is the color Red",
+    "expected_result": "FAIL",
+    "reason": "The Appearance tab is not red, it's monochrome/default theme color",
+    "steps": [
+      {
+        "step_number": 1,
+        "description": "Swipe Vault Menu",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "tap",
+        "coordinates": [
+          200,
+          300
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 2,
+        "description": "Open Settings",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "tap",
+        "coordinates": [
+          1100,
+          200
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 3,
+        "description": "Create new Note",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "tap",
+        "coordinates": [
+          100,
+          1200
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 4,
+        "description": "Verify Appearance icon color (WILL FAIL - not red)",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "verify",
+        "verification_criteria": [
+          "Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)"
+        ]
+      },
+      {
+        "step_number": 5,
+        "description": "Close Settings",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "tap",
+        "coordinates": [
+          1300,
+          300
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 6,
+        "description": "Close Vault Menu",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "tap",
+        "coordinates": [
+          1300,
+          300
+        ],
+        "wait_after": 1.0
+      }
+    ],
+    "success_criteria": [
+      "Test should FAIL because Appearance icon/accent color is purple, not red"
+    ]
+  },
+  "step_results": [
+    {
+      "step_number": 1,
+      "description": "Swipe Vault Menu",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "tap",
+      "coordinates": [
+        200,
+        300
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "empty_vault",
+      "state_match": true,
+      "message": "\u2713 Step completed: Swipe Vault Menu",
+      "issues": [],
+      "state_confidence": 0.7,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0042_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0043_after.png",
+        "error": null,
+        "execution_time": 1.8104734420776367,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Swipe Vault Menu",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 1,
+            "description": "Swipe Vault Menu",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "tap",
+            "coordinates": [
+              200,
+              300
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            200,
+            300
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Swipe Vault Menu",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 1,
+          "description": "Swipe Vault Menu",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "tap",
+          "coordinates": [
+            200,
+            300
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          200,
+          300
+        ]
+      }
+    },
+    {
+      "step_number": 2,
+      "description": "Open Settings",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "tap",
+      "coordinates": [
+        1100,
+        200
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "settings",
+      "state_match": false,
+      "message": "\u2713 Step completed (state: expected 'empty_vault', detected 'settings' - continuing anyway)",
+      "issues": [
+        "State mismatch (non-critical)"
+      ],
+      "state_confidence": 1.0,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0044_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0045_after.png",
+        "error": null,
+        "execution_time": 1.7624242305755615,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Open Settings",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 2,
+            "description": "Open Settings",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "tap",
+            "coordinates": [
+              1100,
+              200
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            1100,
+            200
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Open Settings",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 2,
+          "description": "Open Settings",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "tap",
+          "coordinates": [
+            1100,
+            200
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          1100,
+          200
+        ]
+      }
+    },
+    {
+      "step_number": 3,
+      "description": "Create new Note",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "tap",
+      "coordinates": [
+        100,
+        1200
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "settings",
+      "state_match": false,
+      "message": "\u2713 Step completed (state: expected 'empty_vault', detected 'settings' - continuing anyway)",
+      "issues": [
+        "State mismatch (non-critical)"
+      ],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0046_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0047_after.png",
+        "error": null,
+        "execution_time": 1.8164551258087158,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Create new Note",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 3,
+            "description": "Create new Note",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "tap",
+            "coordinates": [
+              100,
+              1200
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            100,
+            1200
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Create new Note",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 3,
+          "description": "Create new Note",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "tap",
+          "coordinates": [
+            100,
+            1200
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          100,
+          1200
+        ]
+      }
+    },
+    {
+      "step_number": 4,
+      "description": "Verify Appearance icon color (WILL FAIL - not red)",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "verify",
+      "verification_criteria": [
+        "Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)"
+      ],
+      "success": false,
+      "actual_state": "unknown",
+      "state_match": false,
+      "message": "\u2717 Verification failed as expected: Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)",
+      "issues": [
+        "Verification failed (expected behavior)"
+      ],
+      "execution_result": {
+        "success": true,
+        "action": "verify",
+        "screenshot_before": "artifacts/screenshots/screenshot_0048_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0049_after.png",
+        "error": null,
+        "execution_time": 1.2345750331878662,
+        "plan": {
+          "action": "verify",
+          "reasoning": "Executing predefined step: Verify Appearance icon color (WILL FAIL - not red)",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 4,
+            "description": "Verify Appearance icon color (WILL FAIL - not red)",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "verify",
+            "verification_criteria": [
+              "Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)"
+            ]
+          },
+          "verification_criteria": [
+            "Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)"
+          ]
+        }
+      },
+      "plan": {
+        "action": "verify",
+        "reasoning": "Executing predefined step: Verify Appearance icon color (WILL FAIL - not red)",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 4,
+          "description": "Verify Appearance icon color (WILL FAIL - not red)",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "verify",
+          "verification_criteria": [
+            "Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)"
+          ]
+        },
+        "verification_criteria": [
+          "Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)"
+        ]
+      }
+    },
+    {
+      "step_number": 5,
+      "description": "Close Settings",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "tap",
+      "coordinates": [
+        1300,
+        300
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "empty_vault",
+      "state_match": true,
+      "message": "\u2713 Step completed: Close Settings",
+      "issues": [],
+      "state_confidence": 0.9,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0050_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0051_after.png",
+        "error": null,
+        "execution_time": 1.8152012825012207,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Close Settings",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 5,
+            "description": "Close Settings",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "tap",
+            "coordinates": [
+              1300,
+              300
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            1300,
+            300
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Close Settings",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 5,
+          "description": "Close Settings",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "tap",
+          "coordinates": [
+            1300,
+            300
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          1300,
+          300
+        ]
+      }
+    },
+    {
+      "step_number": 6,
+      "description": "Close Vault Menu",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "tap",
+      "coordinates": [
+        1300,
+        300
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "empty_vault",
+      "state_match": true,
+      "message": "\u2713 Step completed: Close Vault Menu",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0052_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0053_after.png",
+        "error": null,
+        "execution_time": 1.769881010055542,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Close Vault Menu",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 6,
+            "description": "Close Vault Menu",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "tap",
+            "coordinates": [
+              1300,
+              300
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            1300,
+            300
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Close Vault Menu",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 6,
+          "description": "Close Vault Menu",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "tap",
+          "coordinates": [
+            1300,
+            300
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          1300,
+          300
+        ]
+      }
+    }
+  ],
+  "final_result": {
+    "passed": false,
+    "message": "Test FAILED as expected (correct behavior): The Appearance tab is not red, it's monochrome/default theme color",
+    "step_summary": {
+      "total": 6,
+      "successful": 5,
+      "failed": 1
+    },
+    "issues": [
+      "Step 4: \u2717 Verification failed as expected: Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)"
+    ],
+    "expected_result": "FAIL"
+  },
+  "report": "\n======================================================================\nTEST REPORT: Test 3: Verify Appearance Tab Color\n======================================================================\n\nDescription: Go to Settings and verify that the 'Appearance' tab icon is the color Red\nExpected Result: FAIL\n\nSTEP EXECUTION:\n  \u2713 Step 1: Swipe Vault Menu\n  \u2713 Step 2: Open Settings\n      Issue: State mismatch (non-critical)\n  \u2713 Step 3: Create new Note\n      Issue: State mismatch (non-critical)\n  \u2717 Step 4: Verify Appearance icon color (WILL FAIL - not red)\n      Issue: Verification failed (expected behavior)\n  \u2713 Step 5: Close Settings\n  \u2713 Step 6: Close Vault Menu\n\nFINAL RESULT: \u2717 FAILED\nMessage: Test FAILED as expected (correct behavior): The Appearance tab is not red, it's monochrome/default theme color\n\nISSUES:\n  - Step 4: \u2717 Verification failed as expected: Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)\n\nSUCCESS CRITERIA:\n  - Test should FAIL because Appearance icon/accent color is purple, not red\n======================================================================\n",
+  "execution_time": 148.61491060256958,
+  "timestamp": "2025-12-23 13:10:15"
+}

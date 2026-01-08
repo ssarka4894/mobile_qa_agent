@@ -1,0 +1,812 @@
+{
+  "test_name": "Test 1: Create Vault",
+  "test_definition": {
+    "name": "Test 1: Create Vault",
+    "description": "Open Obsidian, create a new Vault named 'InternVault', and enter the vault",
+    "expected_result": "PASS",
+    "steps": [
+      {
+        "step_number": 1,
+        "description": "Launch Obsidian app",
+        "action": "launch_app",
+        "package": "md.obsidian",
+        "expected_state": "welcome_screen",
+        "wait_after": 2.0
+      },
+      {
+        "step_number": 2,
+        "description": "Tap 'Create a vault'",
+        "from_state": "welcome_screen",
+        "expected_state": "sync_setup",
+        "action": "tap",
+        "coordinates": [
+          550,
+          1400
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 3,
+        "description": "Tap 'Continue without sync'",
+        "from_state": "sync_setup",
+        "expected_state": "vault_config",
+        "action": "tap",
+        "coordinates": [
+          550,
+          1700
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 4,
+        "description": "Tap vault name input field",
+        "from_state": "vault_config",
+        "expected_state": "vault_config",
+        "action": "tap",
+        "coordinates": [
+          550,
+          900
+        ],
+        "wait_after": 0.5
+      },
+      {
+        "step_number": 5,
+        "description": "Type vault name 'InternVault'",
+        "from_state": "vault_config",
+        "expected_state": "vault_config",
+        "action": "text",
+        "text": "InternVault",
+        "wait_after": 0.5
+      },
+      {
+        "step_number": 6,
+        "description": "Dismiss keyboard by tapping outside",
+        "from_state": "vault_config",
+        "expected_state": "vault_config",
+        "action": "tap",
+        "coordinates": [
+          550,
+          1000
+        ],
+        "wait_after": 0.5
+      },
+      {
+        "step_number": 7,
+        "description": "Tap 'Create a vault' button",
+        "from_state": "vault_config",
+        "expected_state": "folder_permission",
+        "action": "tap",
+        "coordinates": [
+          550,
+          2500
+        ],
+        "wait_after": 1.5
+      },
+      {
+        "step_number": 8,
+        "description": "Tap 'Use this folder'",
+        "from_state": "folder_permission",
+        "expected_state": "android_permission_dialog",
+        "action": "tap",
+        "coordinates": [
+          550,
+          2900
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 9,
+        "description": "Tap 'Allow' for permissions",
+        "from_state": "android_permission_dialog",
+        "expected_state": "empty_vault",
+        "action": "tap",
+        "coordinates": [
+          1100,
+          1800
+        ],
+        "wait_after": 2.0
+      },
+      {
+        "step_number": 10,
+        "description": "Verify vault created and opened",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "verify",
+        "verification_criteria": [
+          "Screen shows 'Create new note' button",
+          "Vault interface is visible",
+          "No error messages present"
+        ]
+      }
+    ],
+    "success_criteria": [
+      "All steps complete without errors",
+      "Final state is 'empty_vault'",
+      "Vault named 'InternVault' is accessible"
+    ]
+  },
+  "step_results": [
+    {
+      "step_number": 1,
+      "description": "Launch Obsidian app",
+      "action": "launch_app",
+      "package": "md.obsidian",
+      "expected_state": "welcome_screen",
+      "wait_after": 2.0,
+      "success": true,
+      "actual_state": "welcome_screen",
+      "state_match": true,
+      "message": "\u2713 Step completed: Launch Obsidian app",
+      "issues": [],
+      "state_confidence": 1.0,
+      "execution_result": {
+        "success": true,
+        "action": "launch_app",
+        "screenshot_before": "artifacts/screenshots/screenshot_0002_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0003_after.png",
+        "error": null,
+        "execution_time": 3.7958896160125732,
+        "plan": {
+          "action": "launch_app",
+          "reasoning": "Executing predefined step: Launch Obsidian app",
+          "expected_next_state": "welcome_screen",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 1,
+            "description": "Launch Obsidian app",
+            "action": "launch_app",
+            "package": "md.obsidian",
+            "expected_state": "welcome_screen",
+            "wait_after": 2.0
+          },
+          "package": "md.obsidian"
+        }
+      },
+      "plan": {
+        "action": "launch_app",
+        "reasoning": "Executing predefined step: Launch Obsidian app",
+        "expected_next_state": "welcome_screen",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 1,
+          "description": "Launch Obsidian app",
+          "action": "launch_app",
+          "package": "md.obsidian",
+          "expected_state": "welcome_screen",
+          "wait_after": 2.0
+        },
+        "package": "md.obsidian"
+      }
+    },
+    {
+      "step_number": 2,
+      "description": "Tap 'Create a vault'",
+      "from_state": "welcome_screen",
+      "expected_state": "sync_setup",
+      "action": "tap",
+      "coordinates": [
+        550,
+        1400
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "sync_setup",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap 'Create a vault'",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0004_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0005_after.png",
+        "error": null,
+        "execution_time": 1.8299658298492432,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap 'Create a vault'",
+          "expected_next_state": "sync_setup",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 2,
+            "description": "Tap 'Create a vault'",
+            "from_state": "welcome_screen",
+            "expected_state": "sync_setup",
+            "action": "tap",
+            "coordinates": [
+              550,
+              1400
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            550,
+            1400
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap 'Create a vault'",
+        "expected_next_state": "sync_setup",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 2,
+          "description": "Tap 'Create a vault'",
+          "from_state": "welcome_screen",
+          "expected_state": "sync_setup",
+          "action": "tap",
+          "coordinates": [
+            550,
+            1400
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          550,
+          1400
+        ]
+      }
+    },
+    {
+      "step_number": 3,
+      "description": "Tap 'Continue without sync'",
+      "from_state": "sync_setup",
+      "expected_state": "vault_config",
+      "action": "tap",
+      "coordinates": [
+        550,
+        1700
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "vault_config",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap 'Continue without sync'",
+      "issues": [],
+      "state_confidence": 1.0,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0006_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0007_after.png",
+        "error": null,
+        "execution_time": 1.774573802947998,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap 'Continue without sync'",
+          "expected_next_state": "vault_config",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 3,
+            "description": "Tap 'Continue without sync'",
+            "from_state": "sync_setup",
+            "expected_state": "vault_config",
+            "action": "tap",
+            "coordinates": [
+              550,
+              1700
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            550,
+            1700
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap 'Continue without sync'",
+        "expected_next_state": "vault_config",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 3,
+          "description": "Tap 'Continue without sync'",
+          "from_state": "sync_setup",
+          "expected_state": "vault_config",
+          "action": "tap",
+          "coordinates": [
+            550,
+            1700
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          550,
+          1700
+        ]
+      }
+    },
+    {
+      "step_number": 4,
+      "description": "Tap vault name input field",
+      "from_state": "vault_config",
+      "expected_state": "vault_config",
+      "action": "tap",
+      "coordinates": [
+        550,
+        900
+      ],
+      "wait_after": 0.5,
+      "success": true,
+      "actual_state": "vault_config",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap vault name input field",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0008_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0009_after.png",
+        "error": null,
+        "execution_time": 1.7980389595031738,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap vault name input field",
+          "expected_next_state": "vault_config",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 4,
+            "description": "Tap vault name input field",
+            "from_state": "vault_config",
+            "expected_state": "vault_config",
+            "action": "tap",
+            "coordinates": [
+              550,
+              900
+            ],
+            "wait_after": 0.5
+          },
+          "coordinates": [
+            550,
+            900
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap vault name input field",
+        "expected_next_state": "vault_config",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 4,
+          "description": "Tap vault name input field",
+          "from_state": "vault_config",
+          "expected_state": "vault_config",
+          "action": "tap",
+          "coordinates": [
+            550,
+            900
+          ],
+          "wait_after": 0.5
+        },
+        "coordinates": [
+          550,
+          900
+        ]
+      }
+    },
+    {
+      "step_number": 5,
+      "description": "Type vault name 'InternVault'",
+      "from_state": "vault_config",
+      "expected_state": "vault_config",
+      "action": "text",
+      "text": "InternVault",
+      "wait_after": 0.5,
+      "success": true,
+      "actual_state": "vault_config",
+      "state_match": true,
+      "message": "\u2713 Step completed: Type vault name 'InternVault'",
+      "issues": [],
+      "state_confidence": 1.0,
+      "execution_result": {
+        "success": true,
+        "action": "text",
+        "screenshot_before": "artifacts/screenshots/screenshot_0010_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0011_after.png",
+        "error": null,
+        "execution_time": 1.8703556060791016,
+        "plan": {
+          "action": "text",
+          "reasoning": "Executing predefined step: Type vault name 'InternVault'",
+          "expected_next_state": "vault_config",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 5,
+            "description": "Type vault name 'InternVault'",
+            "from_state": "vault_config",
+            "expected_state": "vault_config",
+            "action": "text",
+            "text": "InternVault",
+            "wait_after": 0.5
+          },
+          "text": "InternVault"
+        }
+      },
+      "plan": {
+        "action": "text",
+        "reasoning": "Executing predefined step: Type vault name 'InternVault'",
+        "expected_next_state": "vault_config",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 5,
+          "description": "Type vault name 'InternVault'",
+          "from_state": "vault_config",
+          "expected_state": "vault_config",
+          "action": "text",
+          "text": "InternVault",
+          "wait_after": 0.5
+        },
+        "text": "InternVault"
+      }
+    },
+    {
+      "step_number": 6,
+      "description": "Dismiss keyboard by tapping outside",
+      "from_state": "vault_config",
+      "expected_state": "vault_config",
+      "action": "tap",
+      "coordinates": [
+        550,
+        1000
+      ],
+      "wait_after": 0.5,
+      "success": true,
+      "actual_state": "vault_config",
+      "state_match": true,
+      "message": "\u2713 Step completed: Dismiss keyboard by tapping outside",
+      "issues": [],
+      "state_confidence": 0.99,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0012_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0013_after.png",
+        "error": null,
+        "execution_time": 1.8368685245513916,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Dismiss keyboard by tapping outside",
+          "expected_next_state": "vault_config",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 6,
+            "description": "Dismiss keyboard by tapping outside",
+            "from_state": "vault_config",
+            "expected_state": "vault_config",
+            "action": "tap",
+            "coordinates": [
+              550,
+              1000
+            ],
+            "wait_after": 0.5
+          },
+          "coordinates": [
+            550,
+            1000
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Dismiss keyboard by tapping outside",
+        "expected_next_state": "vault_config",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 6,
+          "description": "Dismiss keyboard by tapping outside",
+          "from_state": "vault_config",
+          "expected_state": "vault_config",
+          "action": "tap",
+          "coordinates": [
+            550,
+            1000
+          ],
+          "wait_after": 0.5
+        },
+        "coordinates": [
+          550,
+          1000
+        ]
+      }
+    },
+    {
+      "step_number": 7,
+      "description": "Tap 'Create a vault' button",
+      "from_state": "vault_config",
+      "expected_state": "folder_permission",
+      "action": "tap",
+      "coordinates": [
+        550,
+        2500
+      ],
+      "wait_after": 1.5,
+      "success": true,
+      "actual_state": "folder_permission",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap 'Create a vault' button",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0014_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0015_after.png",
+        "error": null,
+        "execution_time": 1.863692283630371,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap 'Create a vault' button",
+          "expected_next_state": "folder_permission",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 7,
+            "description": "Tap 'Create a vault' button",
+            "from_state": "vault_config",
+            "expected_state": "folder_permission",
+            "action": "tap",
+            "coordinates": [
+              550,
+              2500
+            ],
+            "wait_after": 1.5
+          },
+          "coordinates": [
+            550,
+            2500
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap 'Create a vault' button",
+        "expected_next_state": "folder_permission",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 7,
+          "description": "Tap 'Create a vault' button",
+          "from_state": "vault_config",
+          "expected_state": "folder_permission",
+          "action": "tap",
+          "coordinates": [
+            550,
+            2500
+          ],
+          "wait_after": 1.5
+        },
+        "coordinates": [
+          550,
+          2500
+        ]
+      }
+    },
+    {
+      "step_number": 8,
+      "description": "Tap 'Use this folder'",
+      "from_state": "folder_permission",
+      "expected_state": "android_permission_dialog",
+      "action": "tap",
+      "coordinates": [
+        550,
+        2900
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "android_permission_dialog",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap 'Use this folder'",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0016_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0017_after.png",
+        "error": null,
+        "execution_time": 1.756601333618164,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap 'Use this folder'",
+          "expected_next_state": "android_permission_dialog",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 8,
+            "description": "Tap 'Use this folder'",
+            "from_state": "folder_permission",
+            "expected_state": "android_permission_dialog",
+            "action": "tap",
+            "coordinates": [
+              550,
+              2900
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            550,
+            2900
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap 'Use this folder'",
+        "expected_next_state": "android_permission_dialog",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 8,
+          "description": "Tap 'Use this folder'",
+          "from_state": "folder_permission",
+          "expected_state": "android_permission_dialog",
+          "action": "tap",
+          "coordinates": [
+            550,
+            2900
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          550,
+          2900
+        ]
+      }
+    },
+    {
+      "step_number": 9,
+      "description": "Tap 'Allow' for permissions",
+      "from_state": "android_permission_dialog",
+      "expected_state": "empty_vault",
+      "action": "tap",
+      "coordinates": [
+        1100,
+        1800
+      ],
+      "wait_after": 2.0,
+      "success": true,
+      "actual_state": "empty_vault",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap 'Allow' for permissions",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0018_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0019_after.png",
+        "error": null,
+        "execution_time": 1.7652270793914795,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap 'Allow' for permissions",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 9,
+            "description": "Tap 'Allow' for permissions",
+            "from_state": "android_permission_dialog",
+            "expected_state": "empty_vault",
+            "action": "tap",
+            "coordinates": [
+              1100,
+              1800
+            ],
+            "wait_after": 2.0
+          },
+          "coordinates": [
+            1100,
+            1800
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap 'Allow' for permissions",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 9,
+          "description": "Tap 'Allow' for permissions",
+          "from_state": "android_permission_dialog",
+          "expected_state": "empty_vault",
+          "action": "tap",
+          "coordinates": [
+            1100,
+            1800
+          ],
+          "wait_after": 2.0
+        },
+        "coordinates": [
+          1100,
+          1800
+        ]
+      }
+    },
+    {
+      "step_number": 10,
+      "description": "Verify vault created and opened",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "verify",
+      "verification_criteria": [
+        "Screen shows 'Create new note' button",
+        "Vault interface is visible",
+        "No error messages present"
+      ],
+      "success": true,
+      "actual_state": "unknown",
+      "state_match": false,
+      "message": "\u2713 Verification step completed (criteria: 3 items)",
+      "issues": [],
+      "execution_result": {
+        "success": true,
+        "action": "verify",
+        "screenshot_before": "artifacts/screenshots/screenshot_0020_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0021_after.png",
+        "error": null,
+        "execution_time": 1.1918587684631348,
+        "plan": {
+          "action": "verify",
+          "reasoning": "Executing predefined step: Verify vault created and opened",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 10,
+            "description": "Verify vault created and opened",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "verify",
+            "verification_criteria": [
+              "Screen shows 'Create new note' button",
+              "Vault interface is visible",
+              "No error messages present"
+            ]
+          },
+          "verification_criteria": [
+            "Screen shows 'Create new note' button",
+            "Vault interface is visible",
+            "No error messages present"
+          ]
+        }
+      },
+      "plan": {
+        "action": "verify",
+        "reasoning": "Executing predefined step: Verify vault created and opened",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 10,
+          "description": "Verify vault created and opened",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "verify",
+          "verification_criteria": [
+            "Screen shows 'Create new note' button",
+            "Vault interface is visible",
+            "No error messages present"
+          ]
+        },
+        "verification_criteria": [
+          "Screen shows 'Create new note' button",
+          "Vault interface is visible",
+          "No error messages present"
+        ]
+      }
+    }
+  ],
+  "final_result": {
+    "passed": true,
+    "message": "Test PASSED: 10/10 steps succeeded",
+    "step_summary": {
+      "total": 10,
+      "successful": 10,
+      "failed": 0
+    },
+    "issues": [],
+    "expected_result": "PASS"
+  },
+  "report": "\n======================================================================\nTEST REPORT: Test 1: Create Vault\n======================================================================\n\nDescription: Open Obsidian, create a new Vault named 'InternVault', and enter the vault\nExpected Result: PASS\n\nSTEP EXECUTION:\n  \u2713 Step 1: Launch Obsidian app\n  \u2713 Step 2: Tap 'Create a vault'\n  \u2713 Step 3: Tap 'Continue without sync'\n  \u2713 Step 4: Tap vault name input field\n  \u2713 Step 5: Type vault name 'InternVault'\n  \u2713 Step 6: Dismiss keyboard by tapping outside\n  \u2713 Step 7: Tap 'Create a vault' button\n  \u2713 Step 8: Tap 'Use this folder'\n  \u2713 Step 9: Tap 'Allow' for permissions\n  \u2713 Step 10: Verify vault created and opened\n\nFINAL RESULT: \u2713 PASSED\nMessage: Test PASSED: 10/10 steps succeeded\n\nSUCCESS CRITERIA:\n  - All steps complete without errors\n  - Final state is 'empty_vault'\n  - Vault named 'InternVault' is accessible\n======================================================================\n",
+  "execution_time": 147.03576755523682,
+  "timestamp": "2025-12-23 13:05:08"
+}

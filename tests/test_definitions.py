@@ -233,7 +233,7 @@ TEST_3_DEFINITION = {
             "step_number": 1,
             "description": "Swipe Vault Menu",
             "from_state": "empty_vault",
-            "expected_state": "empty_vault",  # Don't enforce strict state checking
+            "expected_state": "vault_menu",
             "action": "tap",
             "coordinates": (200, 300),
             "wait_after": 1.0
@@ -241,8 +241,8 @@ TEST_3_DEFINITION = {
         {
             "step_number": 2,
             "description": "Open Settings",
-            "from_state": "empty_vault",
-            "expected_state": "empty_vault",  # Don't enforce strict state checking
+            "from_state": "vault_menu",
+            "expected_state": "settings",
             "action": "tap",
             "coordinates": (1100, 200),
             "wait_after": 1.0
@@ -250,8 +250,8 @@ TEST_3_DEFINITION = {
         {
             "step_number": 3,
             "description": "Create new Note",
-            "from_state": "empty_vault",
-            "expected_state": "empty_vault",  # Don't enforce strict state checking
+            "from_state": "settings",
+            "expected_state": "settings",
             "action": "tap",
             "coordinates": (100, 1200),
             "wait_after": 1.0
@@ -259,8 +259,8 @@ TEST_3_DEFINITION = {
         {
             "step_number": 4,
             "description": "Verify Appearance icon color (WILL FAIL - not red)",
-            "from_state": "empty_vault",
-            "expected_state": "empty_vault",
+            "from_state": "settings",
+            "expected_state": "settings",
             "action": "verify",
             "verification_criteria": [
                 "Appearance tab icon is RED (Expected to FAIL - accent color is purple, not red)"
@@ -269,8 +269,8 @@ TEST_3_DEFINITION = {
         {
             "step_number": 5,
             "description": "Close Settings",
-            "from_state": "empty_vault",
-            "expected_state": "empty_vault",
+            "from_state": "settings",
+            "expected_state": "vault_menu",
             "action": "tap",
             "coordinates": (1300, 300),
             "wait_after": 1.0
@@ -278,7 +278,7 @@ TEST_3_DEFINITION = {
         {
             "step_number": 6,
             "description": "Close Vault Menu",
-            "from_state": "empty_vault",
+            "from_state": "vault_menu",
             "expected_state": "empty_vault",
             "action": "tap",
             "coordinates": (1300, 300),
@@ -302,7 +302,7 @@ TEST_4_DEFINITION = {
             "step_number": 1,
             "description": "Tap Vault Options",
             "from_state": "empty_vault",
-            "expected_state": "empty_vault",  # Don't enforce strict state checking
+            "expected_state": "vault_options_menu",
             "action": "tap",
             "coordinates": (1400, 3000),
             "wait_after": 1.0
@@ -310,7 +310,7 @@ TEST_4_DEFINITION = {
         {
             "step_number": 2,
             "description": "Look for 'Print to PDF' (not found, menu closes)",
-            "from_state": "empty_vault",
+            "from_state": "vault_options_menu",
             "expected_state": "empty_vault",
             "action": "tap",
             "coordinates": (750, 1400),
@@ -345,6 +345,19 @@ TEST_SUITE = {
 def get_test(test_name: str) -> Dict[str, Any]:
     """Get test definition by name"""
     return TEST_SUITE.get(test_name)
+
+
+def get_test_definition(test_id: str) -> Dict[str, Any]:
+    """
+    Get test definition by ID (for experiment_runner.py compatibility)
+    
+    Args:
+        test_id: Test identifier (e.g., 'test_1', 'test_2', 'test_3', 'test_4')
+        
+    Returns:
+        Test definition dictionary
+    """
+    return TEST_SUITE.get(test_id)
 
 
 def get_all_tests() -> List[Dict[str, Any]]:

@@ -1,0 +1,805 @@
+{
+  "test_name": "Test 2: Create Note",
+  "test_definition": {
+    "name": "Test 2: Create Note",
+    "description": "Create a new note titled 'Meeting Notes' and type the text 'Daily Standup' into the body",
+    "expected_result": "PASS",
+    "prerequisite": "Test 1 must be completed (vault must exist)",
+    "steps": [
+      {
+        "step_number": 1,
+        "description": "Tap 'Create new note'",
+        "from_state": "empty_vault",
+        "expected_state": "note_editor",
+        "action": "tap",
+        "coordinates": [
+          720,
+          1500
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 2,
+        "description": "Tap on 'Untitled' title field",
+        "from_state": "note_editor",
+        "expected_state": "note_editor",
+        "action": "tap",
+        "coordinates": [
+          400,
+          400
+        ],
+        "wait_after": 0.3
+      },
+      {
+        "step_number": 3,
+        "description": "Delete 'Untitled' text",
+        "from_state": "note_editor",
+        "expected_state": "note_editor",
+        "action": "keyevent",
+        "keycode": 67,
+        "repeat": 10,
+        "wait_after": 0.3
+      },
+      {
+        "step_number": 4,
+        "description": "Type note title 'Meeting Notes'",
+        "from_state": "note_editor",
+        "expected_state": "note_editor",
+        "action": "text",
+        "text": "Meeting%sNotes",
+        "wait_after": 0.5
+      },
+      {
+        "step_number": 5,
+        "description": "Tap in note body",
+        "from_state": "note_editor",
+        "expected_state": "note_editor",
+        "action": "tap",
+        "coordinates": [
+          720,
+          1500
+        ],
+        "wait_after": 0.3
+      },
+      {
+        "step_number": 6,
+        "description": "Type note content 'Daily Standup'",
+        "from_state": "note_editor",
+        "expected_state": "note_editor",
+        "action": "text",
+        "text": "Daily%sStandup",
+        "wait_after": 0.5
+      },
+      {
+        "step_number": 7,
+        "description": "Close keyboard",
+        "from_state": "note_editor",
+        "expected_state": "note_editor",
+        "action": "tap",
+        "coordinates": [
+          1420,
+          200
+        ],
+        "wait_after": 0.5
+      },
+      {
+        "step_number": 8,
+        "description": "Open three-dot menu",
+        "from_state": "note_editor",
+        "expected_state": "note_menu",
+        "action": "tap",
+        "coordinates": [
+          1300,
+          300
+        ],
+        "wait_after": 0.8
+      },
+      {
+        "step_number": 9,
+        "description": "Close note and return to main screen",
+        "from_state": "note_menu",
+        "expected_state": "empty_vault",
+        "action": "tap",
+        "coordinates": [
+          400,
+          1400
+        ],
+        "wait_after": 1.0
+      },
+      {
+        "step_number": 10,
+        "description": "Verify note created correctly",
+        "from_state": "empty_vault",
+        "expected_state": "empty_vault",
+        "action": "verify",
+        "verification_criteria": [
+          "Note titled 'Meeting Notes' was created",
+          "Note body contains 'Daily Standup'",
+          "Returned to main screen successfully"
+        ]
+      }
+    ],
+    "success_criteria": [
+      "Note is created successfully",
+      "Title is exactly 'Meeting Notes'",
+      "Body contains 'Daily Standup'"
+    ]
+  },
+  "step_results": [
+    {
+      "step_number": 1,
+      "description": "Tap 'Create new note'",
+      "from_state": "empty_vault",
+      "expected_state": "note_editor",
+      "action": "tap",
+      "coordinates": [
+        720,
+        1500
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "note_editor",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap 'Create new note'",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0022_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0023_after.png",
+        "error": null,
+        "execution_time": 1.7877533435821533,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap 'Create new note'",
+          "expected_next_state": "note_editor",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 1,
+            "description": "Tap 'Create new note'",
+            "from_state": "empty_vault",
+            "expected_state": "note_editor",
+            "action": "tap",
+            "coordinates": [
+              720,
+              1500
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            720,
+            1500
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap 'Create new note'",
+        "expected_next_state": "note_editor",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 1,
+          "description": "Tap 'Create new note'",
+          "from_state": "empty_vault",
+          "expected_state": "note_editor",
+          "action": "tap",
+          "coordinates": [
+            720,
+            1500
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          720,
+          1500
+        ]
+      }
+    },
+    {
+      "step_number": 2,
+      "description": "Tap on 'Untitled' title field",
+      "from_state": "note_editor",
+      "expected_state": "note_editor",
+      "action": "tap",
+      "coordinates": [
+        400,
+        400
+      ],
+      "wait_after": 0.3,
+      "success": true,
+      "actual_state": "note_editor",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap on 'Untitled' title field",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0024_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0025_after.png",
+        "error": null,
+        "execution_time": 1.8924853801727295,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap on 'Untitled' title field",
+          "expected_next_state": "note_editor",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 2,
+            "description": "Tap on 'Untitled' title field",
+            "from_state": "note_editor",
+            "expected_state": "note_editor",
+            "action": "tap",
+            "coordinates": [
+              400,
+              400
+            ],
+            "wait_after": 0.3
+          },
+          "coordinates": [
+            400,
+            400
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap on 'Untitled' title field",
+        "expected_next_state": "note_editor",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 2,
+          "description": "Tap on 'Untitled' title field",
+          "from_state": "note_editor",
+          "expected_state": "note_editor",
+          "action": "tap",
+          "coordinates": [
+            400,
+            400
+          ],
+          "wait_after": 0.3
+        },
+        "coordinates": [
+          400,
+          400
+        ]
+      }
+    },
+    {
+      "step_number": 3,
+      "description": "Delete 'Untitled' text",
+      "from_state": "note_editor",
+      "expected_state": "note_editor",
+      "action": "keyevent",
+      "keycode": 67,
+      "repeat": 10,
+      "wait_after": 0.3,
+      "success": true,
+      "actual_state": "note_editor",
+      "state_match": true,
+      "message": "\u2713 Step completed: Delete 'Untitled' text",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "keyevent",
+        "screenshot_before": "artifacts/screenshots/screenshot_0026_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0027_after.png",
+        "error": null,
+        "execution_time": 2.5733184814453125,
+        "plan": {
+          "action": "keyevent",
+          "reasoning": "Executing predefined step: Delete 'Untitled' text",
+          "expected_next_state": "note_editor",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 3,
+            "description": "Delete 'Untitled' text",
+            "from_state": "note_editor",
+            "expected_state": "note_editor",
+            "action": "keyevent",
+            "keycode": 67,
+            "repeat": 10,
+            "wait_after": 0.3
+          },
+          "keycode": 67,
+          "repeat": 10
+        }
+      },
+      "plan": {
+        "action": "keyevent",
+        "reasoning": "Executing predefined step: Delete 'Untitled' text",
+        "expected_next_state": "note_editor",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 3,
+          "description": "Delete 'Untitled' text",
+          "from_state": "note_editor",
+          "expected_state": "note_editor",
+          "action": "keyevent",
+          "keycode": 67,
+          "repeat": 10,
+          "wait_after": 0.3
+        },
+        "keycode": 67,
+        "repeat": 10
+      }
+    },
+    {
+      "step_number": 4,
+      "description": "Type note title 'Meeting Notes'",
+      "from_state": "note_editor",
+      "expected_state": "note_editor",
+      "action": "text",
+      "text": "Meeting%sNotes",
+      "wait_after": 0.5,
+      "success": true,
+      "actual_state": "note_editor",
+      "state_match": true,
+      "message": "\u2713 Step completed: Type note title 'Meeting Notes'",
+      "issues": [],
+      "state_confidence": 0.99,
+      "execution_result": {
+        "success": true,
+        "action": "text",
+        "screenshot_before": "artifacts/screenshots/screenshot_0028_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0029_after.png",
+        "error": null,
+        "execution_time": 1.933919906616211,
+        "plan": {
+          "action": "text",
+          "reasoning": "Executing predefined step: Type note title 'Meeting Notes'",
+          "expected_next_state": "note_editor",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 4,
+            "description": "Type note title 'Meeting Notes'",
+            "from_state": "note_editor",
+            "expected_state": "note_editor",
+            "action": "text",
+            "text": "Meeting%sNotes",
+            "wait_after": 0.5
+          },
+          "text": "Meeting%sNotes"
+        }
+      },
+      "plan": {
+        "action": "text",
+        "reasoning": "Executing predefined step: Type note title 'Meeting Notes'",
+        "expected_next_state": "note_editor",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 4,
+          "description": "Type note title 'Meeting Notes'",
+          "from_state": "note_editor",
+          "expected_state": "note_editor",
+          "action": "text",
+          "text": "Meeting%sNotes",
+          "wait_after": 0.5
+        },
+        "text": "Meeting%sNotes"
+      }
+    },
+    {
+      "step_number": 5,
+      "description": "Tap in note body",
+      "from_state": "note_editor",
+      "expected_state": "note_editor",
+      "action": "tap",
+      "coordinates": [
+        720,
+        1500
+      ],
+      "wait_after": 0.3,
+      "success": true,
+      "actual_state": "note_editor",
+      "state_match": true,
+      "message": "\u2713 Step completed: Tap in note body",
+      "issues": [],
+      "state_confidence": 1.0,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0030_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0031_after.png",
+        "error": null,
+        "execution_time": 1.7913594245910645,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Tap in note body",
+          "expected_next_state": "note_editor",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 5,
+            "description": "Tap in note body",
+            "from_state": "note_editor",
+            "expected_state": "note_editor",
+            "action": "tap",
+            "coordinates": [
+              720,
+              1500
+            ],
+            "wait_after": 0.3
+          },
+          "coordinates": [
+            720,
+            1500
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Tap in note body",
+        "expected_next_state": "note_editor",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 5,
+          "description": "Tap in note body",
+          "from_state": "note_editor",
+          "expected_state": "note_editor",
+          "action": "tap",
+          "coordinates": [
+            720,
+            1500
+          ],
+          "wait_after": 0.3
+        },
+        "coordinates": [
+          720,
+          1500
+        ]
+      }
+    },
+    {
+      "step_number": 6,
+      "description": "Type note content 'Daily Standup'",
+      "from_state": "note_editor",
+      "expected_state": "note_editor",
+      "action": "text",
+      "text": "Daily%sStandup",
+      "wait_after": 0.5,
+      "success": true,
+      "actual_state": "note_editor",
+      "state_match": true,
+      "message": "\u2713 Step completed: Type note content 'Daily Standup'",
+      "issues": [],
+      "state_confidence": 0.99,
+      "execution_result": {
+        "success": true,
+        "action": "text",
+        "screenshot_before": "artifacts/screenshots/screenshot_0032_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0033_after.png",
+        "error": null,
+        "execution_time": 1.8992154598236084,
+        "plan": {
+          "action": "text",
+          "reasoning": "Executing predefined step: Type note content 'Daily Standup'",
+          "expected_next_state": "note_editor",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 6,
+            "description": "Type note content 'Daily Standup'",
+            "from_state": "note_editor",
+            "expected_state": "note_editor",
+            "action": "text",
+            "text": "Daily%sStandup",
+            "wait_after": 0.5
+          },
+          "text": "Daily%sStandup"
+        }
+      },
+      "plan": {
+        "action": "text",
+        "reasoning": "Executing predefined step: Type note content 'Daily Standup'",
+        "expected_next_state": "note_editor",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 6,
+          "description": "Type note content 'Daily Standup'",
+          "from_state": "note_editor",
+          "expected_state": "note_editor",
+          "action": "text",
+          "text": "Daily%sStandup",
+          "wait_after": 0.5
+        },
+        "text": "Daily%sStandup"
+      }
+    },
+    {
+      "step_number": 7,
+      "description": "Close keyboard",
+      "from_state": "note_editor",
+      "expected_state": "note_editor",
+      "action": "tap",
+      "coordinates": [
+        1420,
+        200
+      ],
+      "wait_after": 0.5,
+      "success": true,
+      "actual_state": "note_editor",
+      "state_match": true,
+      "message": "\u2713 Step completed: Close keyboard",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0034_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0035_after.png",
+        "error": null,
+        "execution_time": 1.7763314247131348,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Close keyboard",
+          "expected_next_state": "note_editor",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 7,
+            "description": "Close keyboard",
+            "from_state": "note_editor",
+            "expected_state": "note_editor",
+            "action": "tap",
+            "coordinates": [
+              1420,
+              200
+            ],
+            "wait_after": 0.5
+          },
+          "coordinates": [
+            1420,
+            200
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Close keyboard",
+        "expected_next_state": "note_editor",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 7,
+          "description": "Close keyboard",
+          "from_state": "note_editor",
+          "expected_state": "note_editor",
+          "action": "tap",
+          "coordinates": [
+            1420,
+            200
+          ],
+          "wait_after": 0.5
+        },
+        "coordinates": [
+          1420,
+          200
+        ]
+      }
+    },
+    {
+      "step_number": 8,
+      "description": "Open three-dot menu",
+      "from_state": "note_editor",
+      "expected_state": "note_menu",
+      "action": "tap",
+      "coordinates": [
+        1300,
+        300
+      ],
+      "wait_after": 0.8,
+      "success": true,
+      "actual_state": "note_menu",
+      "state_match": true,
+      "message": "\u2713 Step completed: Open three-dot menu",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0036_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0037_after.png",
+        "error": null,
+        "execution_time": 1.834761619567871,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Open three-dot menu",
+          "expected_next_state": "note_menu",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 8,
+            "description": "Open three-dot menu",
+            "from_state": "note_editor",
+            "expected_state": "note_menu",
+            "action": "tap",
+            "coordinates": [
+              1300,
+              300
+            ],
+            "wait_after": 0.8
+          },
+          "coordinates": [
+            1300,
+            300
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Open three-dot menu",
+        "expected_next_state": "note_menu",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 8,
+          "description": "Open three-dot menu",
+          "from_state": "note_editor",
+          "expected_state": "note_menu",
+          "action": "tap",
+          "coordinates": [
+            1300,
+            300
+          ],
+          "wait_after": 0.8
+        },
+        "coordinates": [
+          1300,
+          300
+        ]
+      }
+    },
+    {
+      "step_number": 9,
+      "description": "Close note and return to main screen",
+      "from_state": "note_menu",
+      "expected_state": "empty_vault",
+      "action": "tap",
+      "coordinates": [
+        400,
+        1400
+      ],
+      "wait_after": 1.0,
+      "success": true,
+      "actual_state": "empty_vault",
+      "state_match": true,
+      "message": "\u2713 Step completed: Close note and return to main screen",
+      "issues": [],
+      "state_confidence": 0.98,
+      "execution_result": {
+        "success": true,
+        "action": "tap",
+        "screenshot_before": "artifacts/screenshots/screenshot_0038_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0039_after.png",
+        "error": null,
+        "execution_time": 1.8181049823760986,
+        "plan": {
+          "action": "tap",
+          "reasoning": "Executing predefined step: Close note and return to main screen",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 9,
+            "description": "Close note and return to main screen",
+            "from_state": "note_menu",
+            "expected_state": "empty_vault",
+            "action": "tap",
+            "coordinates": [
+              400,
+              1400
+            ],
+            "wait_after": 1.0
+          },
+          "coordinates": [
+            400,
+            1400
+          ]
+        }
+      },
+      "plan": {
+        "action": "tap",
+        "reasoning": "Executing predefined step: Close note and return to main screen",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 9,
+          "description": "Close note and return to main screen",
+          "from_state": "note_menu",
+          "expected_state": "empty_vault",
+          "action": "tap",
+          "coordinates": [
+            400,
+            1400
+          ],
+          "wait_after": 1.0
+        },
+        "coordinates": [
+          400,
+          1400
+        ]
+      }
+    },
+    {
+      "step_number": 10,
+      "description": "Verify note created correctly",
+      "from_state": "empty_vault",
+      "expected_state": "empty_vault",
+      "action": "verify",
+      "verification_criteria": [
+        "Note titled 'Meeting Notes' was created",
+        "Note body contains 'Daily Standup'",
+        "Returned to main screen successfully"
+      ],
+      "success": true,
+      "actual_state": "unknown",
+      "state_match": false,
+      "message": "\u2713 Verification step completed (criteria: 3 items)",
+      "issues": [],
+      "execution_result": {
+        "success": true,
+        "action": "verify",
+        "screenshot_before": "artifacts/screenshots/screenshot_0040_before.png",
+        "screenshot_after": "artifacts/screenshots/screenshot_0041_after.png",
+        "error": null,
+        "execution_time": 1.2025504112243652,
+        "plan": {
+          "action": "verify",
+          "reasoning": "Executing predefined step: Verify note created correctly",
+          "expected_next_state": "empty_vault",
+          "confidence": 1.0,
+          "step_definition": {
+            "step_number": 10,
+            "description": "Verify note created correctly",
+            "from_state": "empty_vault",
+            "expected_state": "empty_vault",
+            "action": "verify",
+            "verification_criteria": [
+              "Note titled 'Meeting Notes' was created",
+              "Note body contains 'Daily Standup'",
+              "Returned to main screen successfully"
+            ]
+          },
+          "verification_criteria": [
+            "Note titled 'Meeting Notes' was created",
+            "Note body contains 'Daily Standup'",
+            "Returned to main screen successfully"
+          ]
+        }
+      },
+      "plan": {
+        "action": "verify",
+        "reasoning": "Executing predefined step: Verify note created correctly",
+        "expected_next_state": "empty_vault",
+        "confidence": 1.0,
+        "step_definition": {
+          "step_number": 10,
+          "description": "Verify note created correctly",
+          "from_state": "empty_vault",
+          "expected_state": "empty_vault",
+          "action": "verify",
+          "verification_criteria": [
+            "Note titled 'Meeting Notes' was created",
+            "Note body contains 'Daily Standup'",
+            "Returned to main screen successfully"
+          ]
+        },
+        "verification_criteria": [
+          "Note titled 'Meeting Notes' was created",
+          "Note body contains 'Daily Standup'",
+          "Returned to main screen successfully"
+        ]
+      }
+    }
+  ],
+  "final_result": {
+    "passed": true,
+    "message": "Test PASSED: 10/10 steps succeeded",
+    "step_summary": {
+      "total": 10,
+      "successful": 10,
+      "failed": 0
+    },
+    "issues": [],
+    "expected_result": "PASS"
+  },
+  "report": "\n======================================================================\nTEST REPORT: Test 2: Create Note\n======================================================================\n\nDescription: Create a new note titled 'Meeting Notes' and type the text 'Daily Standup' into the body\nExpected Result: PASS\n\nSTEP EXECUTION:\n  \u2713 Step 1: Tap 'Create new note'\n  \u2713 Step 2: Tap on 'Untitled' title field\n  \u2713 Step 3: Delete 'Untitled' text\n  \u2713 Step 4: Type note title 'Meeting Notes'\n  \u2713 Step 5: Tap in note body\n  \u2713 Step 6: Type note content 'Daily Standup'\n  \u2713 Step 7: Close keyboard\n  \u2713 Step 8: Open three-dot menu\n  \u2713 Step 9: Close note and return to main screen\n  \u2713 Step 10: Verify note created correctly\n\nFINAL RESULT: \u2713 PASSED\nMessage: Test PASSED: 10/10 steps succeeded\n\nSUCCESS CRITERIA:\n  - Note is created successfully\n  - Title is exactly 'Meeting Notes'\n  - Body contains 'Daily Standup'\n======================================================================\n",
+  "execution_time": 153.07052946090698,
+  "timestamp": "2025-12-23 13:07:44"
+}

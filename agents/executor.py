@@ -274,6 +274,70 @@ class ExecutorAgent:
         """
         print(f"🔄 Clearing app data for {package_name}...")
         return self.adb.clear_app_data(package_name)
+
+
+    # ADD THIS METHOD TO YOUR agents/executor.py FILE
+    # Add it right after the clear_app_state() method (around line 276)
+
+    def full_app_reset(self, package_name: str = "md.obsidian") -> bool:
+        """
+        Complete app reset including external storage cleanup
+        More thorough than clear_app_state - removes persistent data like Obsidian vaults
+
+        Args:
+            package_name: App package to reset
+
+        Returns:
+            Success status
+        """
+        print(f"🔄 Performing FULL reset for {package_name}...")
+
+        # Force stop app first
+        try:
+            self.adb.run_command(f"am force-stop {package_name}")
+            time.sleep(0.5)
+            print("  ✓ App force-stopped")
+        except Exception as e:
+            print(f"  ⚠ Force stop warning: {e}")
+
+        # Clear app data (internal storage)
+        success = self.adb.clear_app_data(package_name)
+        if success:
+            print("  ✓ App data cleared")
+        else:
+            print("  ⚠ App data clear failed")
+
+        time.sleep(1)
+
+        # Remove Obsidian vault folders from external storage
+        # These persist even after clearing app data
+        vault_locations = [
+            '/storage/emulated/0/Documents/InternVault',
+            '/storage/emulated/0/InternVault',
+            '/sdcard/InternVault',
+            '/sdcard/Documents/InternVault',
+            '/storage/emulated/0/Android/data/md.obsidian',
+            '/data/data/md.obsidian'
+        ]
+
+        removed_count = 0
+        for location in vault_locations:
+            try:
+                result = self.adb.run_command(f"rm -rf {location}")
+                if result:  # Command executed
+                    removed_count += 1
+            except Exception:
+                pass  # Location may not exist, which is fine
+
+        if removed_count > 0:
+            print(f"  ✓ Cleaned {removed_count} storage location(s)")
+        else:
+            print("  ℹ No external storage to clean")
+
+        print("✅ Full reset complete - app is in pristine state")
+        time.sleep(2)  # Give system time to settle
+
+        return success
     
     def get_execution_summary(self) -> Dict:
         """Get summary of all executions"""
@@ -296,3 +360,5 @@ class ExecutorAgent:
         """Clear execution history"""
         self.execution_history = []
         self.screenshot_counter = 0
+
+

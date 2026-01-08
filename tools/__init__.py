@@ -1,6 +1,7 @@
 """Tools package for ADB and state detection utilities"""
 from .adb_tools import ADBController, create_adb_controller
-from .state_detection import StateDetector
+from tools.state_detector import StateDetector
+
 
 __all__ = [
     'ADBController',

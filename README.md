@@ -183,3 +183,103 @@ adb devices
 - Tests 3 and 4 are designed to FAIL (negative testing)
 - The system is lenient with state verification to avoid false failures
 - Coordinates are hardcoded for reliability
+
+---
+
+## Experimental Evaluation Framework
+
+In addition to the basic test execution capabilities above, this project includes a comprehensive experimental evaluation framework used to conduct rigorous performance analysis.
+
+### Experimental Components
+
+**New Files Added for Research:**
+```
+mobile-qa-agent/
+├── experiment_runner.py      # Comprehensive experimental framework
+├── visualize_experiments.py  # Generate publication-quality plots
+├── experiments.db            # SQLite database with all results
+└── plots/                    # 12 visualization outputs
+    ├── phase1_1_*.png       # Baseline performance (4 plots)
+    ├── phase1_2_*.png       # Prompt engineering (5 plots)
+    ├── phase2_1_*.png       # Model comparison (2 plots)
+    └── phase2_2_*.png       # Ensemble strategies (1 plot)
+```
+
+### Running Experiments
+
+**Phase 1.1: Baseline Performance Assessment**
+```bash
+python experiment_runner.py --phase 1.1 --repetitions 10
+```
+Establishes performance benchmarks across all 4 tests with 10 suite repetitions (40 total runs).
+
+**Phase 1.2: Prompt Engineering Analysis**
+```bash
+python experiment_runner.py --phase 1.2 --repetitions 10
+```
+Tests temperature, context window, few-shot examples, and constraint variations (140 total runs).
+
+**Phase 2.1: Model Comparison**
+```bash
+python experiment_runner.py --phase 2.1 --repetitions 20
+```
+Compares multiple Gemini model variants on complete test suite (320 total runs).
+
+**Phase 2.2: Ensemble Strategy Evaluation**
+```bash
+python experiment_runner.py --phase 2.2 --repetitions 15
+```
+Evaluates ensemble approaches: baseline, majority voting, tiered, confidence-based (60 total runs).
+
+**Run All Experiments:**
+```bash
+python experiment_runner.py --phase all --repetitions 10
+```
+
+### Generating Visualizations
+
+After running experiments, generate plots:
+```bash
+# Generate all visualizations
+python visualize_experiments.py --phase all
+
+# Or generate specific phase
+python visualize_experiments.py --phase 1.1
+python visualize_experiments.py --phase 1.2
+python visualize_experiments.py --phase 2.1
+python visualize_experiments.py --phase 2.2
+```
+
+Outputs saved to `plots/` directory as PNG files ready for publication.
+
+### Key Experimental Findings
+
+Our comprehensive evaluation across **470+ test executions** revealed:
+
+1. **Perfect Reliability:** 100% success on positive tests (Tests 1-2) with deterministic consistency
+2. **Prompt Engineering Minimal Impact:** All temperature/context/few-shot/constraint variations achieved 100%
+3. **Model Parity:** Gemini Flash matches Pro performance at 90% cost reduction
+4. **Ensemble Unnecessary:** All strategies achieved identical 100% success
+5. **Production-Viable:** $0.0005 per test execution = ~$5/year for 10,000 tests
+
+### Experimental Database
+
+All results stored in `experiments.db` SQLite database with schema:
+- `experiments` table: Test-level metrics (success, time, cost, tokens)
+- `step_metrics` table: Granular step-by-step tracking
+
+Query example:
+```python
+import sqlite3
+conn = sqlite3.connect('experiments.db')
+df = pd.read_sql_query("SELECT * FROM experiments WHERE phase='1.1'", conn)
+```
+
+### Research Documentation
+
+Complete experimental methodology and results documented in:
+- **report.md** - Comprehensive technical report with all findings
+- **Focused_Research_Paper.pdf** - 10-page publication-ready paper
+- **12 Visualizations** - Publication-quality plots in `plots/` directory
+
+For full details, see `report.md` and research paper in repository.
